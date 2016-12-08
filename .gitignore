@@ -4,3 +4,4 @@ dist/
 .idea/
 .vscode/
 npm-debug.log
+.zip

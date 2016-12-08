@@ -7,6 +7,8 @@
     <script src="Scripts/Libs/jquery.js"></script>
     <script src="Scripts/Libs/vue.js"></script>
     <script src="Scripts/Default/Utils.js"></script>
+    <script src="Scripts/Default/components/HeaderMenu.js"></script>
+    <script src="Scripts/Default/components/Footer.js"></script>
     <script src="Scripts/Default/components/RandomUser.js"></script>
     <script src="Scripts/Default/components/Hello.js"></script>
     <script src="Scripts/Default/components/Labels.js"></script>
@@ -32,19 +34,11 @@
   </head>
   <body>
     <div id="root">
-      <div class="clear-fix">
-        <nav class="pull-left">
-          <a href="javascript:;" @click="TabMenu('hello')">Hello</a>
-          <a href="javascript:;" @click="TabMenu('random-user')">RandomUser</a>
-          <a href="javascript:;" @click="TabMenu('labels')">Labels</a>
-          <!--<router-link to="/Hello">Go to Hello</router-link>-->
-          <!--<router-link to="/RandomUsers">Go to RandomUser</router-link>-->
-          <!--<router-link to="/Labels">Go to RandomUser</router-link>-->
-        </nav>
-      </div>
+      <header-menu @tab="TabMenu"></header-menu>
       <div class="component-container">
         <component :is="currentView" :label-list="labelList" :can-repeat="false" @success="labelSuccess" @fail="labelFail"></component>
       </div>
+      <footer-public></footer-public>
     </div>
     <script src="Scripts/Default/Main.js"></script>
   </body>

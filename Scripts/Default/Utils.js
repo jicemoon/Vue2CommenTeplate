@@ -5,7 +5,7 @@ if(!Utils){
   var Utils = {};
 }
 (function (){
-  Utils.RootFolder = "/Vue2Test";
+  Utils.RootFolder = "/Vue2CommenTeplate";
   Utils.RegistrationComponents = function (name, data, htmlUrl){
     Vue.component(name, function (resolve, reject) {
       if(htmlUrl){

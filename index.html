@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="Contents/CSS/normalize.min.css">
+    <script src="Scripts/Libs/jquery.js"></script>
+    <script src="Scripts/Libs/vue.js"></script>
+    <script src="Scripts/Default/Utils.js"></script>
+    <script src="Scripts/Default/components/RandomUser.js"></script>
+    <script src="Scripts/Default/components/Hello.js"></script>
+    <script src="Scripts/Default/components/Labels.js"></script>
+    <style>
+      nav a{margin-right: 10px; color: #666666;}
+      .component-container{margin: 20px;}
+      .component-container .random-user button { padding: 5px 15px; }
+      .component-container .random-user table { border-spacing: 0; border-collapse: collapse; min-width:800px}
+      .component-container .random-user th, td { padding: 5px 15px; vertical-align: middle; border: 1px solid #aaaaaa; }
+
+      .component-container .lables-root{font-size: 12px; width:100%; text-align: left;}
+      .component-container .lables-root .lable-container{margin:5px 0; padding:5px; background-color:#cccccc;}
+      .component-container .lables-root .list{padding: 5px 10px; height: 20px; line-height: 20px;}
+      .component-container .lables-root .btn{padding: 0px 10px; height:20px; line-height:20px; border:none; font-weight:bold; vertical-align:middle; overflow:hidden;}
+      .component-container .lables-root .btn:hover{background-color: #ff0000;}
+      .component-container .lables-root .add-item .btn:hover{background-color: #00ff66;}
+      .component-container .lables-root input{vertical-align:middle; width:40%;}
+      .component-container .lables-root .list.labels .dib{display: inline-block}
+      .component-container .lables-root .list.labels .label{vertical-align:middle; display:inline-block; width: 50px; text-align:right;overflow:hidden;}
+      .component-container .lables-root .list.labels .dib.bg{width: 120px; height:100%; background-color: #999999; vertical-align: middle; margin:0 10px;}
+      .component-container .lables-root .list.labels .dib.bg .dib{width: 0; height:100%; background-color: #ee99ff; }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="clear-fix">
+        <nav class="pull-left">
+          <a href="javascript:;" @click="TabMenu('hello')">Hello</a>
+          <a href="javascript:;" @click="TabMenu('random-user')">RandomUser</a>
+          <a href="javascript:;" @click="TabMenu('labels')">Labels</a>
+          <!--<router-link to="/Hello">Go to Hello</router-link>-->
+          <!--<router-link to="/RandomUsers">Go to RandomUser</router-link>-->
+          <!--<router-link to="/Labels">Go to RandomUser</router-link>-->
+        </nav>
+      </div>
+      <div class="component-container">
+        <component :is="currentView" :label-list="labelList" :can-repeat="false" @success="labelSuccess" @fail="labelFail"></component>
+      </div>
+    </div>
+    <script src="Scripts/Default/Main.js"></script>
+  </body>
+</html>

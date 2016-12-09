@@ -55,6 +55,7 @@ nav a {
     vertical-align: middle;
     display: inline-block;
     width: 50px;
+    height: 100%;
     text-align: right;
     overflow: hidden;
 }

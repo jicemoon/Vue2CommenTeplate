@@ -34,7 +34,7 @@
   </head>
   <body>
     <div id="root">
-      <header-menu @tab="TabMenu"></header-menu>
+      <header-menu :tab-menu="TabMenu" :root="root"></header-menu>
       <div class="component-container">
         <component :is="currentView" :label-list="labelList" :can-repeat="false" @success="labelSuccess" @fail="labelFail"></component>
       </div>

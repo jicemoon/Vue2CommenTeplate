@@ -9,7 +9,7 @@
       <label class="label" :title="item.label" v-text="item.label"></label>
       <span class="dib bg" :style="{width:maxWidth+'px'}">
           <span class="dib" :style="{width:(item.percent/100*maxWidth)+'px'}">&nbsp;{{item.percent}}%</span>
-        </span>
+      </span>
       <button class="btn" @click="deleteItem(idx)">X</button>
     </div>
   </div>

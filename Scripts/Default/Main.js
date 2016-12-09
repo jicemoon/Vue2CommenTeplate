@@ -19,6 +19,7 @@ new Vue({
             alert(message);
         },
         TabMenu: function (compName) {
+            //此方法必须, HeaderMenu菜单切换时会调用此方法
             this.currentView != compName && (this.currentView = compName);
         }
     }

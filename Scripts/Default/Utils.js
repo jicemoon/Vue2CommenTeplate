@@ -7,7 +7,7 @@ if (!Utils) {
 (function () {
     Utils.RootFolder = "/Vue2CommenTeplate";
     /***
-     * options: {name:"", htmlUrl: "", data: ""}
+     * @options: {name:"", htmlUrl: "", data: ""}
      * **/
     Utils.RegistrationComponents = function (options) {
         if(!options || !options.name) throw new Error("组件注册错误");

@@ -7,7 +7,7 @@ nav a {
 .component-container .random-user table {
     border-spacing: 0;
     border-collapse: collapse;
-    min-width: 800px
+    min-width: 950px
 }
 .component-container .random-user th, td {
     padding: 5px 15px;

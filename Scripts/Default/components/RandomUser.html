@@ -1,6 +1,28 @@
 <div class="random-user">
-    <button @click="GetData">添加</button>
-    <span v-show="IsLoading" style="color: darkred">加载中.....</span>
+    <div>
+        <span>本次添加用户个数: <input type="number" v-model="resultNum"></span>
+        <button @click="isMore = !isMore">更多条件</button>
+        <button @click="GetData">添加</button>
+        <span v-show="IsLoading" style="color: darkred">加载中.....</span>
+        <div v-show="isMore">
+            <p><label>
+                <span>性别: </span>
+                <select v-model="gender">
+                    <option value="ALL">全部</option>
+                    <option value="male">男</option>
+                    <option value="female">女</option>
+                </select>
+            </label></p>
+            <p>
+                <label>
+                    <span>国籍: </span>
+                    <select v-model="nationality">
+                        <option v-for="(value, key) in nationalities" :value="key">{{value}}</option>
+                    </select>
+                </label>
+            </p>
+        </div>
+    </div>
     <br/><br/>
     <table>
         <thead>
@@ -11,6 +33,7 @@
             <th>性别</th>
             <th>电邮</th>
             <th>电话</th>
+            <th>国籍</th>
             <th>操作</th>
         </tr>
         </thead>
@@ -22,6 +45,7 @@
             <td>{{user.gender}}</td>
             <td>{{user.email}}</td>
             <td>{{user.phone}}</td>
+            <td>{{nationalities[user.nat]}}(<span style="color:#888888;">{{user.nat}}</span>)</td>
             <td>
                 <button @click="deleteUser(idx)">删除</button>
             </td>
